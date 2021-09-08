@@ -10,7 +10,7 @@
         <label>
             Nombre
             <br>
-            <input type="text" name="name" value="{{$curso->name}}">
+            <input type="text" name="name" value="{{old('name',$curso->name)}}">
         </label>
         <br>
         <label>            
