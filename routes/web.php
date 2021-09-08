@@ -16,9 +16,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
-Route::get('/cursos', [CursoController::class,'index'])->name('cursos.index');
+/*Route::get('/cursos', [CursoController::class,'index'])->name('cursos.index');
 
 Route::get('/cursos/create', [CursoController::class, 'create'])->name('cursos.create');
 
@@ -26,13 +26,17 @@ Route::post('/cursos', [CursoController::class, 'store'])->name('cursos.store');
 
 Route::get('/cursos/{curso}', [CursoController::class, 'show'])->name('cursos.show');
 
-Route::get('/cursos/{id}/edit',[CursoController::class,'edit'])->name('cursos.edit');
+Route::get('/cursos/{curso}/edit',[CursoController::class,'edit'])->name('cursos.edit');
 
 Route::put('/cursos/{curso}',[CursoController::class,'update'])->name('cursos.update');
-
 
 Route::delete('/cursos/{curso}',[CursoController::class,'destroy'])->name('cursos.destroy');
 
 /*Route::get('/cursos/{nombre}/{categoria?}',function($nombre, $categoria=null){
     return "Bienvenido al curso " . $nombre . " de categoria " . $categoria;
 });*/
+
+// Route::resource('/asignaturas', CursoController::class)->parameters(['asignaturas' => 'curso'])->names('cursos');
+Route::resource('cursos', CursoController::class);
+
+Route::view('nosotros','nosotros')->name('nosotros');

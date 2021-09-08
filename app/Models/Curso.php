@@ -14,4 +14,8 @@ class Curso extends Model
     // Se guardan "lo que no esta escrito"
     protected $guarded = [];
 
+    public function getRouteKeyName()
+    {
+      return 'slug';
+    }
 }
