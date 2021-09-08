@@ -31,13 +31,14 @@ class StoreCurso extends FormRequest
     }
 
     public function attributes(){
-        // Personalizacion de mensajes para enviar al front
+        // Personalizacion de mensajes para enviar al front solo con los campos
         return ['name' =>'nombre del curso',];
     }
 
     public function messages(){
+        // Personalizar TODO el mensaje
         return [
             'descripcion.required' => 'Debe ingresar una descripcion del curso',
-        ];
+        ]; 
     }
 }

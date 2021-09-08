@@ -24,15 +24,14 @@ Route::get('/cursos/create', [CursoController::class, 'create'])->name('cursos.c
 
 Route::post('/cursos', [CursoController::class, 'store'])->name('cursos.store');
 
-Route::get('/cursos/{id}', [CursoController::class, 'show'])->name('cursos.show');
+Route::get('/cursos/{curso}', [CursoController::class, 'show'])->name('cursos.show');
 
 Route::get('/cursos/{id}/edit',[CursoController::class,'edit'])->name('cursos.edit');
 
 Route::put('/cursos/{curso}',[CursoController::class,'update'])->name('cursos.update');
 
 
-
-
+Route::delete('/cursos/{curso}',[CursoController::class,'destroy'])->name('cursos.destroy');
 
 /*Route::get('/cursos/{nombre}/{categoria?}',function($nombre, $categoria=null){
     return "Bienvenido al curso " . $nombre . " de categoria " . $categoria;
